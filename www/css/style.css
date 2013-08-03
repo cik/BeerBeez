@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/* STANDARD FOR MOBILE */
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;
+                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-attachment: fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+/* END STANDARD MOBILE */
+
+/* START STRUCTURE */
+
+#mainContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#contents {
+    /* */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: -webkit-calc(100% - 44px);
+    width: 100%;
+}
+
+#topbar{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    height: 44px;
+    width: 100%;
+    background-color: blue;
+}
+
+#topbar.notvisible{
+    display: none;
+}
+
+#topbar.nottitle #title{
+    display: none;
+}
+
+#topbar.notrightbutton #rightbutton{
+    display: none;
+}
+
+#topbar.nottriplebutton #triplebutton{
+    display: none;
+}
+
+
+#back{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    float: left;
+}
+
+#rightbutton{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    display: inline-block;
+
+}
+
+#navigationbar {
+    position: absolute;
+    bottom:0;
+    left:0;
+    height: 44px;
+    width: 100%;
+    color: white;
+    background-color: red;
+    text-align: center;
+    z-index: 10;
+}
+
+
+#preferiti {
+    position:relative;
+    margin: 5px 1px 5px 7px;
+    width: 115px;
+    height: 80%;
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    border-radius: 2px; 
+    float: left;
+}
+
+.bottonmenu {
+    position:relative;
+    margin: 5px 1px 5px 1px;
+    width: 115px;
+    height: 80%;
+    color: black;
+    background-color: yellow;
+    text-align: center;
+    border-radius: 2px; 
+    float: left;
+}
+
+#grafo {
+    position:absolute;
+    top: -40px;
+    left: -webkit-calc(100% / 2 - 40px);
+    margin: 0px;
+    width: 76px;
+    height: 76px;
+    color: black;
+    text-align: center;
+    border-radius: 100%; 
+    float: left;
+    z-index: 20;
+    background-color: blue;
+}
+
+#title {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    text-overflow: ellipsis;
+    font-size: medium;
+    line-height: 44px;
+    font-size: 1.5em;
+    font-weight: bold;
+    white-space:nowrap; 
+    overflow:hidden;
+    display: inline-block;
+}
+
+#wrapcompletamento{
+    position: absolute;
+    height: 40%;
+    width: 80%;
+    left: 10%;
+    overflow: hidden;
+}
+
+#completamento{
+    position: relative;
+    height: 100%;
+    width: 106%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: none;
+}
+
+#completamento.completamentovisible{
+    display: block;
+}
+
+#completamento ul {
+    list-style-type: none; /* nessun elemento come marcatore */
+    padding-left: 0;       /* padding nullo */
+    margin-left: 0;        /* margine nullo */
+}
+
+#completamento ul li {
+    border-bottom: 1px solid #d9e2eb;
+    background: red;
+    display: block;
+    width: 100%;
+}
+
+.imgpreview{
+    position: relative;
+    top: 0;
+    left: 70%;
+    width: 40px;
+    height: 40px;
+}
+
+#search{
+    background-color: yellow;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
+.ratelist{
+    list-style-type: upper-roman;
+    padding-left: 0;       /* padding nullo */
+    margin-left: 0;        /* margine nullo */
+}
+
+.imglist{
+    width: 100px;
+    height: 100px;
+}
+
+.dettaglilist{
+    display: inline-block;
+}
+
+/* END STRUCTURE */
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.markerOpen {
+    background-color: #25AE5E;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+/* dettaglio birra */
+
+#imgdettaglio{
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+#blocco1 {
+    position: relative;
+    display: inline-block;
+}
+
+#rating_img{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+}
+
+#numero_voti {
+    position: relative;
+    display: inline-block;
+}
+
+#triplebutton{
+    position: relative;
+    margin-left: 50%;
+}
+
+#share{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    float: left;
+    margin: 1px 5px 1px 1px;
+}
+
+#vota{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    float: left;
+    margin: 1px 5px 1px 1px;
+}
+
+#addprefer{
+    margin: 1px 5px 1px 1px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    float: left;
+}
