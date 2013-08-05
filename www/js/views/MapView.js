@@ -5,6 +5,7 @@ define(["jquery", "underscore", "parse", "handlebars", "text!templates/map.html"
 
         tagName: "div",
         id: "map",
+        topbar: "topbar_title_button3",
 
         template: Handlebars.compile(template),
         popupTemplate: Handlebars.compile(popupTemplate),

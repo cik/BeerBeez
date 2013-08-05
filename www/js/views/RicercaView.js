@@ -5,6 +5,7 @@ define(["jquery", "underscore", "parse", "handlebars", "text!templates/ricerca.h
 
 
         template: Handlebars.compile(template),
+        topbar: "notopbar",
 
         initialize: function () {
           this.model.on("reset", this.changelist, this);

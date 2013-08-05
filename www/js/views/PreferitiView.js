@@ -5,6 +5,7 @@ define(["jquery", "underscore", "parse", "handlebars", "text!templates/preferiti
 
 
         template: Handlebars.compile(template),
+        topbar: "topbar_title_button1",
 
         events: {
           "touchend .touchevent": "prova"

@@ -5,6 +5,7 @@ define(["jquery", "underscore", "parse", "handlebars", "text!templates/about.htm
 
 
         template: Handlebars.compile(template),
+        topbar: "topbar_title",
 
         events: {
           

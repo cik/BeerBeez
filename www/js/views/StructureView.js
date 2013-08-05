@@ -5,6 +5,15 @@ define(["jquery", "underscore", "parse", "handlebars", "leaflet", "text!template
 
         id: "mainContainer", 
 
+        initialize: function () {
+          this.on("notopbar", this.notopbar);
+          this.on("topbar_title", this.topbar_title);
+          this.on("topbar_title_button1", this.topbar_title_button1);
+          this.on("topbar_title_button2", this.topbar_title_button2);
+          this.on("topbar_title_button3", this.topbar_title_button3);
+          this.on("topbar_triplebutton", this.topbar_triplebutton);
+      },
+
         events: {
           "touchend #preferiti": "preferiti",
           "touchend #topbeer": "topbeer",
@@ -14,7 +23,55 @@ define(["jquery", "underscore", "parse", "handlebars", "leaflet", "text!template
           "touchend #back": "goBack",
           "touchend #vota": "votaview",
           "touchend #addprefer": "addprefer",
-          "touchend #rightbutton": "remove"
+          "touchend #rightbutton1": "remove",
+        },
+
+        notopbar: function () {
+          topbar.classList.add("notvisible");
+        },
+
+        topbar_title: function () {
+          topbar.classList.remove("notvisible");
+          topbar.classList.remove("nottitle");
+          topbar.classList.add("notrightbutton");
+          topbar.classList.add("nottriplebutton");
+        },
+
+        topbar_title_button1: function () {
+          topbar.classList.remove("notvisible");
+          topbar.classList.remove("nottitle");
+          topbar.classList.remove("notrightbutton");
+          topbar.classList.add("nottriplebutton");
+          topbar.classList.remove("notrightbutton1");
+          topbar.classList.add("notrightbutton2");
+          topbar.classList.add("notrightbutton3");
+        },
+
+        topbar_title_button2: function () {
+          topbar.classList.remove("notvisible");
+          topbar.classList.remove("nottitle");
+          topbar.classList.remove("notrightbutton");
+          topbar.classList.add("nottriplebutton");
+          topbar.classList.add("notrightbutton1");
+          topbar.classList.remove("notrightbutton2");
+          topbar.classList.add("notrightbutton3");
+        },
+
+        topbar_title_button3: function () {
+          topbar.classList.remove("notvisible");
+          topbar.classList.remove("nottitle");
+          topbar.classList.remove("notrightbutton");
+          topbar.classList.add("nottriplebutton");
+          topbar.classList.add("notrightbutton1");
+          topbar.classList.add("notrightbutton2");
+          topbar.classList.remove("notrightbutton3");
+        },
+
+        topbar_triplebutton: function () {
+          topbar.classList.remove("notvisible");
+          topbar.classList.add("nottitle");
+          topbar.classList.add("notrightbutton");
+          topbar.classList.remove("nottriplebutton");
         },
 
         goBack: function () {
@@ -71,7 +128,7 @@ define(["jquery", "underscore", "parse", "handlebars", "leaflet", "text!template
           $('body').append($(this.el));
           return this;
           /*if(!this.topbar) {
-            this.topbar = document.getElementById("#topbar");
+            this.topbar = document.getElementById("topbar");
           }*/
         },
 

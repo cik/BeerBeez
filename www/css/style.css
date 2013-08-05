@@ -70,6 +70,15 @@ body {
 #topbar.notrightbutton #rightbutton{
     display: none;
 }
+#topbar.notrightbutton1 #rightbutton1{
+    display: none;
+}
+#topbar.notrightbutton2 #rightbutton2{
+    display: none;
+}
+#topbar.notrightbutton3 #rightbutton3{
+    display: none;
+}
 
 #topbar.nottriplebutton #triplebutton{
     display: none;

@@ -5,6 +5,7 @@ define(["jquery", "underscore", "parse", "handlebars", "text!templates/dettaglio
 
 
         template: Handlebars.compile(template),
+        topbar: "topbar_triplebutton",
 
         events: {
           "touchend #birrificio": "dettagliobirrificio"
