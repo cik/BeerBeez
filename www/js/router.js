@@ -35,7 +35,6 @@ define(["jquery", "underscore", "parse", "collections/BeerCollection", "models/B
       },
 
       ricerca: function () {
-        topbar.classList.add("notvisible");
         var page = new Ricerca({
           model: new BeerCollection()
         });
@@ -43,30 +42,18 @@ define(["jquery", "underscore", "parse", "collections/BeerCollection", "models/B
       },
 
       topbeer: function () {
-        topbar.classList.remove("notvisible");
-        topbar.classList.remove("nottitle");
-        topbar.classList.add("notrightbutton");
-        topbar.classList.add("nottriplebutton");
         var page = new TopBeer({
         });
         this.changePage(page);
       },
 
       preferiti: function () {
-        topbar.classList.remove("notvisible");
-        topbar.classList.remove("nottitle");
-        topbar.classList.remove("notrightbutton");
-        topbar.classList.add("nottriplebutton");
         var page = new Preferiti({
         });
         this.changePage(page);
       },
 
       about: function () {
-        topbar.classList.remove("notvisible");
-        topbar.classList.remove("nottitle");
-        topbar.classList.add("notrightbutton");
-        topbar.classList.add("nottriplebutton");
         var page = new About({
         });
         this.changePage(page);
@@ -90,10 +77,6 @@ define(["jquery", "underscore", "parse", "collections/BeerCollection", "models/B
       },
 
       map: function () {
-        topbar.classList.remove("notvisible");
-        topbar.classList.remove("nottitle");
-        topbar.classList.remove("notrightbutton");
-        topbar.classList.add("nottriplebutton");
         var page = new MapView({
           model: this.ads
         });
@@ -101,10 +84,6 @@ define(["jquery", "underscore", "parse", "collections/BeerCollection", "models/B
       },
 
       dettagliobirra: function (id) {
-        topbar.classList.remove("notvisible");
-        topbar.classList.add("nottitle");
-        topbar.classList.add("notrightbutton");
-        topbar.classList.remove("nottriplebutton");
         var page = new DettaglioBirraView({
           model: id,
           collection: new BeerCollection()
@@ -113,20 +92,12 @@ define(["jquery", "underscore", "parse", "collections/BeerCollection", "models/B
       },
 
       dettagliobirrificio: function () {
-        topbar.classList.remove("notvisible");
-        topbar.classList.remove("nottitle");
-        topbar.classList.remove("notrightbutton");
-        topbar.classList.add("nottriplebutton");
         var page = new DettaglioBirrificioView({
         });
         this.changePage(page);
       },
 
       votaview: function () {
-        topbar.classList.remove("notvisible");
-        topbar.classList.remove("nottitle");
-        topbar.classList.add("notrightbutton");
-        topbar.classList.add("nottriplebutton");
         var page = new VotaView({
         });
         this.changePage(page);
@@ -138,9 +109,11 @@ define(["jquery", "underscore", "parse", "collections/BeerCollection", "models/B
            this.currentView.off();
         }
         this.currentView = page;
+        if(this.currentView.topbar)
+          this.structureView.trigger(this.currentView.topbar);
         page.render();
         this.contents.append($(page.el));
-        this.currentView.trigger("inTheDom");
+        this.currentView.trigger("inTheDom");   
       }
 
     });
